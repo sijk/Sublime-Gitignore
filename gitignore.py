@@ -4,7 +4,8 @@ import os
 
 class rungiboCommand(sublime_plugin.WindowCommand):
 
-	path = os.path.join(os.path.dirname(__file__), 'boilerplates')
+	path = os.path.join(os.path.abspath(os.path.dirname(__file__)),
+	                    'boilerplates')
 
 	def run(self):
 		self.list = [os.path.splitext(f)[0] for f in os.listdir(self.path)]
